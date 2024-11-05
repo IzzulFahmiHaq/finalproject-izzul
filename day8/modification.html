@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function light(show) {
+            // Body..
+            var pic;
+            if (show == 0) {
+                pic ="../image/pic_bulboff.gif";
+            }
+            else{
+                pic ="../image/pic_bulbon.gif";
+            }
+            document.getElementById('myImage').src = pic;
+        }
+    </script>
+</head>
+<body>
+    <!-- konten -->
+     <div id="myDiv">Hello, World</div>
+     <!-- Atribut -->
+      <img id="myImage" src="../image/pic_bulboff.gif" alt="Gambar Awal">
+
+      <p>
+        <button type="button" onclick="light(1)">Light On</button>
+        <button type="button" onclick="light(0)">Light Off</button>
+    </p>
+      <!-- css -->
+       <div id="myDiv" style="width: 100px; height: 100px; background-color: lightblue;">
+        contoh Elemen
+       </div>
+
+       <script>
+        // Mengubah konten id myDiv
+        let myDiv = document.getElementById('myDiv');
+        myDiv.textContent = 'Hello, JavaScript!';
+
+        // Mengubah atribut 'src' dari elemen gambar
+        document.getElementById("myImage").setAttribute("src", "../image/pic_bulboff.gif");
+        document.getElementById("myImage").setAttribute("alt", "Gambar Awal");
+
+        // Mengubah properti css elemen
+        let div = document.getElementById("myDiv");
+        div.style.backgroundColor = "lightgreen"; // Ubah warna latar belakang
+        div.style.width = "200px";               // Ubah lebar
+        div.style.height = "200px";             // Ubah tinggi
+       </script>
+</body>
+</html>

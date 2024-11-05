@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Penentuan Umur Seseorang</h2>
+
+    <label for="umur">Masukkan Umur:</label>
+    <input type="number" id="umur" placeholder="Masukkan umur">
+    <button onclick="cekUmur()">Cek Umur</button>
+
+    <p id="hasil"></p>
+
+    <script>
+        function cekUmur() {
+            var umur = document.getElementById("umur").value;
+           var hasil = "";
+
+           if (umur >= 50) {
+            hasil = "Umur kamu sudah tua.";
+           } else if (umur >= 20) {
+            hasil = "Umur kamu sudah dewasa.";
+           } else if (umur >= 15) {
+            hasil = "Umur kamu sudah remaja.";
+           } else if (umur >= 5) {
+            hasil = "Umur kamu masih bocil.";
+           } else if (umur >= 1-4) {
+            hasil = "Umur kamu masih bayi.";
+           }
+
+           document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
+</body>
+</html>

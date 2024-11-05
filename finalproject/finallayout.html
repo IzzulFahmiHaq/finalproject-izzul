@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>finallayout</title>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #797474;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: rgb(216, 207, 207);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .BAse,
+    .BASE,
+    .base,
+    .baSe {
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .BAse {
+      flex-basis: 65%;
+    }
+
+    .BASE,
+    .base {
+      flex-basis: 20%;
+    }
+
+    .baSe {
+      width: 100%;
+      text-align: center;
+    }
+
+    .fakeimg {
+      background-color: gray;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .BAse,
+      .BASE,
+      .base {
+        flex-basis: 100%;
+      }
+
+      ul li {
+        float: none;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        padding: 10px;
+      }
+
+      .BAse,
+      .BASE,
+      .base {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color: rgb(225, 228, 231);">
+  <h1 style="text-align: center;">Welcome to the Smart Student Simple Website</h1>
+  <p style="text-align: center;">Website Collection of Basic Coding Projects</p>
+
+  <ul>
+    <li><a class="active" href="finaltabel.html">Home</a></li>
+    <li><a href="finallamp.html">Project</a></li>
+    <li style="float:right"><a href="finaltabel.html">Back</a></li>
+  </ul>
+
+  <div class="container">
+    <div class="BAse">
+      <h1>Simple Table HTML</h1>
+      <p><strong>SMK BINUS Mranggen, 18 October, 2024</strong></p>
+      <img class="fakeimg"
+        src="https://www.dicoding.com/blog/wp-content/uploads/2020/04/Internship-Robby-Table-HTML-celpadd-color.jpg"
+        width="550" height="300">
+      <p>Simple Table</p>
+      <p>On this occasion I created a simple website to test my abilities and mindset
+        I.
+      </p>
+    </div>
+
+    <div class="BASE">
+      <h1>Presiden ke-3</h1>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6i4nKuChXSlVzeclFWyKar185clP4q7YA9Q&s"
+        width="250" height="200">
+      <p>Born in Pare-pare, South Sulawesi</p>
+      <p>6 Juni 1901</p>
+      <p>Third President in INDONESIA</p>
+    </div>
+
+    <div class="BAse">
+      <h1>JavaScript Lamp</h1>
+      <p><strong>Trial, October 18, 2024</strong></p>
+      <img class="fakeimg" src="https://i.ytimg.com/vi/pZhSaEUMoS8/maxresdefault.jpg">
+      <p>Lampu ON OFF</p>
+      <p>Apply JavaScript to a light to turn it on and off using a button</p>
+    </div>
+
+    <div class="base">
+      <h1>let's be Friends</h1>
+      <p><a href="">Instagram</a></p>
+      <p><a href="">TikTok</a></p>
+    </div>
+
+    <div class="baSe">
+      <h1>holder of a bright future</h1>
+      <p><strong>copyright by Izzul Fahmi 2024</strong></p>
+    </div>
+  </div>
+</body>
+</html>

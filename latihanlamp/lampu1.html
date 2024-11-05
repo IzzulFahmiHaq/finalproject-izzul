@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menyalakan Lampu</title>
+  </head>
+  <body>
+    <h1>Kontrol Lampu</h1>
+    <p>Menggunakan lampu pada masing-masing ruangan</p>
+
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUQpNu6T3FC_0get7hHb7hY5f64ooG6hZqiw&s" alt="" width="660" height="450">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6xF-Bslv0xTxbH012YyeiYtd3RK3eXjgAhQ&s" alt="" width="660" height="450">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRlfZOAa3LdZoxG_GRGJdb1QRZswL520mcA&s" alt="" width="660" height="450">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRDzBx-ygec1zw4EH5A7cqsizqcr4M9XAkmQ&s" alt="" width="660" height="450">
+  </div>
+
+    <img id="lampuImage" src="../image/pic_bulboff.gif" alt="Lampu" />
+    <p id="lampuStatus">Lampu Mati</p>
+    <button onclick="trueOnLampu('lampuImage', 'lampuStatus', 'lampuTimer')">
+      Nyalakan Lampu
+    </button>
+    <p id="lampuTimer"></p>
+    
+    <script>
+      function trueOnLampu(imageId, statusId, timerId) {
+        document.getElementById(imageId).src = "../image/pic_bulbon.gif";
+        document.getElementById(statusId).innerText = "Lampu Menyala";
+
+        let countdown = 3; // Mengatur timer menjadi 10 detik
+        document.getElementById(timerId).innerText =
+          "Waktu: " + countdown + " Detik";
+
+        let timerInterval = setInterval(function () {
+          countdown--;
+          if (countdown > 0) {
+            document.getElementById(timerId).innerText =
+              "Waktu: " + countdown + " Detik";
+          } else {
+            clearInterval(timerInterval); // Memperbaiki typo 'cleerInterval' menjadi 'clearInterval'
+            document.getElementById(timerId).innerText = "";
+            document.getElementById(imageId).src = "../image/pic_bulboff.gif";
+            document.getElementById(statusId).innerText = "Lampu Mati";
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

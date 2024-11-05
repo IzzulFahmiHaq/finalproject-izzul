@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empat Lampu Kanan Kiri</title>
+    <style>
+        .lampu-container {
+            display: flex;
+            justify-content: space-between; /* Membagi elemen lampu kiri dan kanan */
+            flex-wrap: wrap; /* Membuat elemen terbungkus ke baris baru bila layar kecil */
+            margin: 50px;
+        }
+
+        .lampu {
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            width: 45%; /* Setiap lampu menempati 45% lebar layar */
+            background-color: #f0f0f0; /* Tambahkan warna background */
+        }
+
+        .bg-1 {
+            background-image: url('../img/kamar.gif'); /* Ganti dengan path gambar */
+            background-size: cover;
+            background-position: center; 
+
+
+        }
+
+        .bg-2 {
+            background-image: url('../img/jepang.gif'); /* Ganti dengan path gambar */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-3 {
+            background-image: url('../img/bintaro_outdoor_olpops_80d05d9332_3cG-aIX2V.gif'); /* Ganti dengan path gambar */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-4 {
+            background-image: url('../img/cafe.gif'); /* Ganti dengan path gambar */
+            background-size: cover;
+            background-position: center;
+        }
+
+        img {
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="lampu-container">
+    <!-- Lampu 1 (Kiri) -->
+    <div class="lampu bg-1">
+        <p>Lampu 1</p>
+        <p id="countdown1">3</p>
+        <button onclick="nyalakanLampu('myImage1', 'countdown1', 3)">Lampu Hidup</button>
+        <img id="myImage1" src="../image/pic_bulboff.gif"> 
+        <br><br><br><br>
+    </div>
+
+    <!-- Lampu 2 (Kanan) -->
+    <div class="lampu bg-2">
+        <p>Lampu 2</p>
+        <p id="countdown2">3</p>
+        <button onclick="nyalakanLampu('myImage2', 'countdown2', 3)">Lampu Hidup</button>
+        <img id="myImage2" src="../image/pic_bulboff.gif">
+         <br><br><br><br>
+    </div>
+
+    <!-- Lampu 3 (Kiri) -->
+    <div class="lampu bg-3">
+        <p>Lampu 3</p>
+        <p id="countdown3">3</p>
+        <button onclick="nyalakanLampu('myImage3', 'countdown3', 3)">Lampu Hidup</button>
+        <img id="myImage3" src="../image/pic_bulboff.gif"> 
+        <br><br><br><br>
+    </div>
+
+    <!-- Lampu 4 (Kanan) -->
+    <div class="lampu bg-4">
+        <p>Lampu 4</p>
+        <p id="countdown4">3</p>
+        <button onclick="nyalakanLampu('myImage4', 'countdown4', 3)">Lampu Hidup</button>
+        <img id="myImage4" src="../image/pic_bulboff.gif">
+        <br><br> <br><br>
+    </div>
+</div>
+
+<script>
+    function nyalakanLampu(lampuId, countdownId, timeLeft) {
+        document.getElementById(lampuId).src = '../image/pic_bulbon.gif';
+        hitungMundur(lampuId, countdownId, timeLeft); // Mulai hitung mundur ketika lampu dinyalakan
+    }
+
+    // Hitung mundur untuk setiap lampu
+    function hitungMundur(lampuId, countdownId, timeLeft) {
+        const countdown = setInterval(function() {
+            document.getElementById(countdownId).innerHTML = timeLeft;
+            timeLeft -= 1;
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                document.getElementById(countdownId).innerHTML = "Waktu habis!";
+                document.getElementById(lampuId).src = '../final/pic_bulboff.gif'; // Matikan lampu otomatis
+            }
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>

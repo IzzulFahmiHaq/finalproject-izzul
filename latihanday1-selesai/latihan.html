@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Bulb On/Off</title>
+    <script type="text/javascript">
+        function light(show) {
+            // Body..
+            var pic;
+            if (show == 0) {
+                pic ="../image/pic_bulboff.gif";
+            }
+            else{
+                pic ="../image/pic_bulbon.gif";
+            }
+            document.getElementById('bulb').src = pic;
+        }
+    </script>
+</head>
+<body>
+    <h1>Bulb On/Off</h1>
+    <p>Here, a JavaScript changes the values of the source attribute of an images.</p>
+
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUQpNu6T3FC_0get7hHb7hY5f64ooG6hZqiw&s" alt="" width="660" height="450">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6xF-Bslv0xTxbH012YyeiYtd3RK3eXjgAhQ&s" alt="" width="660" height="450">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRlfZOAa3LdZoxG_GRGJdb1QRZswL520mcA&s" alt="" width="660" height="450">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRDzBx-ygec1zw4EH5A7cqsizqcr4M9XAkmQ&s" alt="" width="660" height="450">
+    </div>
+
+    <img id="bulb" src="../image/pic_bulboff.gif" alt="Gambar Awal" width="" height="200">
+    <p>
+        <button type="button" onclick="light(1)">Light On</button>
+        <button type="button" onclick="light(0)">Light Off</button>
+    </p>
+</body>
+</html>

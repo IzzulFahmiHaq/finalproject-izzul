@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay di Atas Gambar</title>
+
+    <script type="text/javascript">
+        function light(show) {
+            // Body..
+            var pic;
+            if (show == 0) {
+                pic ="../image/pic_bulboff.gif";
+            }
+            else{
+                pic ="../image/pic_bulbon.gif";
+            }
+            document.getElementById('bulb').src = pic;
+        }
+    </script>
+
+    <style>
+        .container {
+            position: relative;
+            width: 300px; /* Atur lebar sesuai kebutuhan */
+        }
+        
+        .image {
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi */
+            opacity: 0; /* Mulai dengan transparansi 0 */
+            transition: opacity 0.5s; /* Efek transisi saat hover */
+        }
+
+        .container:hover .overlay {
+            opacity: 1; /* Tampilkan overlay saat hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUQpNu6T3FC_0get7hHb7hY5f64ooG6hZqiw&s" alt="" class="image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6xF-Bslv0xTxbH012YyeiYtd3RK3eXjgAhQ&s" alt="" class="image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCRlfZOAa3LdZoxG_GRGJdb1QRZswL520mcA&s" alt="" class="image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRDzBx-ygec1zw4EH5A7cqsizqcr4M9XAkmQ&s" alt="" class="image">
+    <div class="overlay"></div>
+</div>
+
+<img id="bulb" src="../image/pic_bulboff.gif" alt="Gambar Awal" width="" height="200">
+    <p>
+        <button type="button" onclick="light(1)">Light On</button>
+        <button type="button" onclick="light(0)">Light Off</button>
+    </p>
+
+</body>
+</html>

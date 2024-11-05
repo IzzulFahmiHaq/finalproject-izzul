@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function light(show) {
+            var pic;
+            if (show == 0) {
+                pic ="../image/pic_bulboff.gif";
+            }
+            else{
+                pic ="../image/pic_bulbon.gif";
+            }
+            document.getElementById('bulb').src = pic;
+        }
+    </script>
+</head>
+<body>
+    <h2>Status Lampu</h2>
+
+<img id="myImage" src="../image/pic_bulboff.gif" style="width:100px">\
+<br><br>
+<button onclick="document.getElementById('myImage').src='../image/pic_bulbon.gif'">Nyalakan lampu</button>
+
+ <p id="counter">angka: 0</p>
+    <script>
+        let counterDisplay = document.getElementById("counter");
+        let i = 4;
+        let counting = true;
+        let intervalid = setInterval(function() {
+            if (counting) {
+                i--;
+                counterDisplay.textContent = "Angka: " + i;
+            } else {
+                clearInterval(intervalid);
+            }
+        }, 1000); 
+
+
+    </script>
+
+
+</body>
+</html>

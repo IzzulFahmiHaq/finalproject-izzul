@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Pilih Bulan Berdasarkan Nomor</h2>
+    <!--From input untuk nomor bulan ini-->
+    <label for="bulan">Masukkan nomor bulan (1-12):</label>
+    <input type="number" id="bulan" placeholder="Masukkan nomor bulan" />
+    <button onclick="cekBulan()">Cek Bulan</button>
+    <!--Tempat menampilkan hasil-->
+    <p id="hasilBulan"></p>
+    <script>
+    // Fungsi untuk mengecek bulan berdasarkan nomor yang dimasukkan
+    function cekBulan() {
+       // Mengambil nilai dari input
+        var nomorBulan = parseInt(document.getElementById("bulan").value);
+        var hasil = "";
+
+        //Menggunakan struktur switch untuk menentukan bulan
+        switch (nomorBulan) {
+            case 1:
+                hasil = "Bulan ini adalah januari.";
+                break;
+            case 2:
+                hasil = "Bulan ini adalah februari.";
+                break;
+            case 3:
+                hasil = "Bulan ini adalah maret.";
+                break;
+            case 4:
+                hasil = "Bulan ini adalah april.";
+                break;
+            case 5:
+                hasil = "Bulan ini adalah mei.";
+                break;
+            case 6:
+                hasil = "Bulan ini adalah juni.";
+                break;
+            case 7:
+                hasil = "Bulan ini adalah juli.";
+                break;
+            case 8:
+                hasil = "Bulan ini adalah agustus.";
+                break;
+            case 9:
+                hasil = "Bulan ini adalah september.";
+                break;
+            case 10:
+                hasil = "Bulan ini adalah oktober.";
+                break;
+            case 11:
+                hasil = "Bulan ini adalah november.";
+                break;
+            case 12:
+                hasil = "Bulan ini adalah desember.";
+                break;
+                default:
+                    hasil = "Nomor bulan tidak valid. Masukkan angka antara 1 dan 12";
+        }
+        // Menampilkan hasil di elemen dengan id 'hasil bulan'
+       document.getElementById("hasilBulan").innerHTML = hasil;
+    }
+    </script>
+</body>
+</html>

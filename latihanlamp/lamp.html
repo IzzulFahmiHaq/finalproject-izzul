@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project</title>
+  <style>
+    body {
+      background-color: rgb(235, 233, 233);
+    }
+
+    a:link,
+    a:visited {
+      background-color: gray;
+      color: black;
+      padding: 5px 8px;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    a:hover,
+    a:active {
+      background-color: white;
+    }
+
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    body {
+      background-color: rgb(235, 233, 233);
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 5px;
+    }
+
+    .cafe {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 10px;
+      gap: 5px;
+    }
+
+    h1 {
+      background-color: #fff;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    .utama,
+    .meeting,
+    .resepsionis,
+    .dapur,
+    .toilet,
+    .gudang {
+      width: 600px;
+      text-align: center;
+      height: 300px;
+    }
+
+    .utama {
+      background-image: url(https://asset.kompas.com/crops/S8dfqn6WJCQ3kWaPxeroDa6KxEg=/0x76:4032x2764/750x500/data/photo/2021/09/11/613c98c27631e.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .meeting {
+      background-image: url(https://i0.wp.com/insight.mbiz.co.id/wp-content/uploads/2018/12/dekorasi-ruang-meeting.jpg?fit=1120%2C804&ssl=1);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .resepsionis {
+      background-image: url(https://static.republika.co.id/uploads/images/inpicture_slide/resepsionis-hotel-yang-menyatu-dengan-coffee-shop-dan-co-working-_181118065840-973.jpg);
+    }
+
+    .dapur {
+      background-image: url(https://renotop.id/img/blogs/tips-menciptakan-dapur-minimalis-ala-coffee-shop-9Y8Ch.jpg);
+    }
+
+    .toilet {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5d/Southbeachhotel-bathroom.jpg);
+    }
+
+    .gudang {
+      background-image: url(https://i0.wp.com/www.siapbisnis.net/wp-content/uploads/2019/10/Gudang-Kopi-House-Blend-Terbaik-1.jpg?fit=600%2C400&ssl=1);
+    }
+
+    .status-text {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1 style="text-align: center">CAFE BINUS</h1>
+  <div style="text-align: center">
+    <button class="btn"><a href="finaltabel.html"> HOME</a></button>
+    <button class="btn"><a href="finallayout.html"> LAYOUT</a></button>
+    <div style="display: flex">
+      <div class="utama">
+        <h2>Ruang Utama</h2>
+        <img id="myImage" src="../image/pic_bulboff.gif" style="width: 100px" />
+        <div>
+          <button onclick="turnOnLamp('myImage', 'status1', 'timer1')">Nyalakan Lampu</button>
+        </div>
+        <p id="status1" class="status-text">Lampu Mati</p>
+        <p id="timer1" class="status-text"></p>
+      </div>
+      <div class="meeting">
+        <h2>Ruang Meeting</h2>
+        <img id="myMeeting" src="../image/pic_bulboff.gif" style="width: 100px" />
+        <div>
+          <button onclick="turnOnLamp('myMeeting', 'status2', 'timer2')">Nyalakan Lampu</button>
+        </div>
+        <p id="status2" class="status-text">Lampu Mati</p>
+        <p id="timer2" class="status-text"></p>
+      </div>
+    </div>
+<br>
+<br>
+    <div style="display: flex">
+      <div class="resepsionis">
+        <h2>Ruang Resepsionis</h2>
+        <img id="myReception" src="../image/pic_bulboff.gif" style="width: 100px" />
+        <div>
+          <button onclick="turnOnLamp('myReception', 'status3', 'timer3')">Nyalakan Lampu</button>
+        </div>
+        <p id="status3" class="status-text">Lampu Mati</p>
+        <p id="timer3" class="status-text"></p>
+      </div>
+      <div class="dapur">
+        <h2>Ruang Dapur</h2>
+        <img id="myDapur" src="../image/pic_bulboff.gif" style="width: 100px" />
+        <div>
+          <button onclick="turnOnLamp('myDapur', 'status4', 'timer4')">Nyalakan Lampu</button>
+        </div>
+        <p id="status4" class="status-text">Lampu Mati</p>
+        <p id="timer4" class="status-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function turnOnLamp(imgId, statusId, timerId) {
+      document.getElementById(imgId).src = "../image/pic_bulbon.gif";
+      document.getElementById(statusId).innerText = "Lampu Menyala";
+
+      let countdown = 3;
+      document.getElementById(timerId).innerText = "Timer: " + countdown + " detik";
+
+      let timerInterval = setInterval(function() {
+        countdown--;
+        if (countdown > 0) {
+          document.getElementById(timerId).innerText = "Timer: " + countdown + " detik";
+        } else {
+          clearInterval(timerInterval);
+          document.getElementById(timerId).innerText = "";
+          document.getElementById(imgId).src = "../image/pic_bulboff.gif";
+          document.getElementById(statusId).innerText = "Lampu Mati";
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+
+</html>

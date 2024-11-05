@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Belajar Tipe Data Dasar JavaScript</h1>
+    <p id="hasil"></p>
+
+    <script>
+        // Tipe Data String (Teks)
+        let namalengkap = "M Izzul Fahmi Haqiqi"; // 
+        console.log("Nama Lengkap: " + namalengkap);
+
+        // Tipe Data Number (Angka)
+        let usia = 15; // Angka tidak perlu tanda kutip
+        console.log("Usia: " + usia);
+
+        // Tipe Data Number (tru/flase)
+        let sudahmakan = false; // Angka tidak perlu tanda kutip
+        console.log("Sudah Makan : " + sudahmakan);
+
+        // Tipe Data Boolean (True/False)
+        let hobi =["Melukis", "Membaca", "Berenang","BadMinton","Berlari"];
+        console.log("Hobi: " + hobi);
+
+        // Tipe Data Object (Objek)
+        let identitas = {
+            nama:"izzul",
+            tanggallahir:"24 februari 2009",
+            alamat:"Ungaran Timur",
+        };
+        console.log("Identitas: ", identitas);
+
+        // Menampilkan Hasil Pada Halaman HTML
+        document.getElementById("hasil").innerHTML =
+        "<br>Tipe Data:</b><br>" +
+        "Nama Lengkap(String): " + namalengkap + "<br>" +
+        "Usia (number): " + usia + "<br>" +
+        "Sudah Makan (Boolean): " + sudahmakan + "<br>" +
+        "Hobi (Array): " + hobi + "<br>" +
+        "Identitas (Object): Nama: " + identitas.nama + "Tanggal Lahir: " + identitas.tanggallahir + "Alamat: " + identitas.alamat;
+    </script>
+</body>
+</html>

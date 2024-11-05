@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="tampilkanArray()">
+    <h1>Contoh Array di JavaScrpit</h1>
+    <p id="pertama"></p>
+    <p id="kedua"></p>
+    <p id="hapus"></p>
+    <p id="hapusPertama"></p>
+    <p id="panjang"></p>
+    <p id="semuaBuah"></p>
+    <script>
+        function tampilkanArray() {
+
+            // Membuat Array sederhana berisi nama-nama buah
+            var buah = ["Apel", "Pisang", "Jeruk", "Mangga"];
+
+            //mengakses elemen dari array
+            document.getElementById("pertama").innerHTML = "Buah pertama: " + buah[0];
+            document.getElementById("kedua").innerHTML = "Buah kedua: " + buah[1];
+
+            // Menambahkan buah baru kearry
+            buah.push("Nanas");
+
+            // Menghapus buah terakhir dari arry menggunakan pop
+            var buahTerakhir = buah.pop();
+
+            // MEnghapus buah pertama dari arry menggunakan shift
+            var buahPertama = buah.shift();
+
+            // Menampilkan  hasil setelah menghapus buah terakhir
+            document.getElementById("hapus").innerHTML = "Total terakhir yang dihapus: " + buahTerakhir;
+
+            // Menampilkan  hasil setelah menghapus buah pertama
+            document.getElementById("hapusPertama").innerHTML = "Total pertama yang dihapus: " + buahPertama;
+            
+            // Menampilkan panjang array dan semua elemennya
+            document.getElementById("panjang").innerHTML = "Total hari setelah penghapusan: " + buah.length;
+            document.getElementById("semuaBuah").innerHTML = "Semua buah: " + buah.join(", ");
+        }
+    </script>
+</body>
+</html>
